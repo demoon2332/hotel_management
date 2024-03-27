@@ -1,0 +1,68 @@
+[
+        {
+            "Property": "SPH",
+            "Total_Rooms": 744,
+            "Room_Revenue": "234,458.70",
+            "FAB_Revenue": "609,316.22",
+            "Other_Revenue": "51,547.30",
+            "Total_Revenue": "895,322.22",
+            "Occupancy_Percentage": "22.80",
+            "ADR": 57.59,
+            "Hotel_Rooms": 17856,
+            "Available_Rooms": 13785,
+            "Rev":{
+                "Occupied_Room": 234458.70,
+                "Group_Room": 145896.90,
+                "Transient_Room": 88561.79
+            },
+            "RV": {
+                "Occupied_Room": 4071,
+                "Group_Room": 2508,
+                "Transient_Room": 1563
+            },
+            "OCC":{
+                "Occupied_Room": 22.8,
+                "Group_Room": 14.0,
+                "Transient_Room": 8.8
+            },
+            "ADR$":{
+                "Occupied_Room": 57.59,
+                "Group_Room": 58.17,
+                "Transient_Room": 56.66
+            }
+        },
+        {
+            "Property": "PP02",
+            "Total_Rooms": 788,
+            "Room_Revenue": "250,000.00",
+            "FAB_Revenue": "620,000.00",
+            "Other_Revenue": "55,000.00",
+            "Total_Revenue": "925,000.00",
+            "Occupancy_Percentage": "25.00",
+            "ADR": 60.00,
+            "Hotel_Rooms": 19500,
+            "Available_Rooms": 15000,
+            "Rev": {
+              "Occupied_Room": 250000.00,
+              "Group_Room": 155000.00,
+              "Transient_Room": 95000.00
+            },
+            "RV": {
+              "Occupied_Room": 4500,
+              "Group_Room": 2800,
+              "Transient_Room": 1700
+            },
+            "OCC": {
+              "Occupied_Room": 25.00,
+              "Group_Room": 15.00,
+              "Transient_Room": 10.00
+            },
+            "ADR$": {
+              "Occupied_Room": 60.00,
+              "Group_Room": 62.50,
+              "Transient_Room": 57.35
+            }
+        }
+          
+]
+  

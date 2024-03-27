@@ -1,3 +1,7 @@
+body, html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,411 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: var(--theme);
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: top;
+  object-fit: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+a:-webkit-any-link {
+  text-decoration: none;
+}
+
+:root {
+
+  --inputWidth: 80%;
+  --headerHeight: 50px;
+  --themeNotFoundPage: #3F4D68;
+  --navbarHeight: 80px;
+  --mainColor: rgb(106, 133, 229);
+  --mainColorLight: rgb(138, 152, 233);
+  --mainColorLightFaded: rgb(138, 152, 233, 0.5);
+  --mainColorLightFaded2: rgb(138, 152, 233, 0.75);
+  --mainColorDark: rgba(55, 61, 97);
+  --secondaryColor: rgb(243, 247, 127);
+  --secondaryColorLight: rgb(241, 244, 163);
+  --secondaryColorLightFaded: rgb(241, 244, 163,0.5);
+  --secondaryColorLightFaded2: rgb(241, 244, 163,0.75);
+  --thirdColor: rgba(255, 194, 48, 1);
+  --thirdColorDark: rgb(187, 140, 31);
+  --textColor: #fff;
+  
+  --successColor: rgb(32, 120, 20);
+  --successColorLight: rgb(82, 199, 82);
+  --dangerColor: rgb(191, 46, 46);
+  --dangerColorLight: rgb(192, 75, 75);
+  --warningColor: orange;
+  --warningColorLight: rgb(253, 189, 71);
+  --infoColor:#24a3e3;
+  --infoColorLight: #81c9f0;
+  --cancelColor: rgb(122, 121, 121);
+  --cancelColorLight: rgb(187, 187, 187);
+}
+
+/* let btn in main.css of login folder --> be primary btn */
+.input{
+  color: var(--mainColor);
+  width: var(--inputWidth);
+  margin: 10px 0px;
+  padding: 12px 20px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  background: rgba(230,230,230,0.8);
+  outline: none;
+}
+/* <div class="checkbox-input">
+  <input id="example-1" class="substituted" type="checkbox" aria-hidden="true" />
+  <label for="example-1">Checkbox</label>
+</div> */
+
+.btn {
+  width: fit-content;
+    appearance: button;
+    background-color: orange;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-family: din-round,sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 12px 0px 0px 0px;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: filter .2s;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    display: flex;
+    gap: 6px;
+  }
+  
+  .btn:after {
+    background-clip: padding-box;
+    background-color: var(--thirdColor);
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    bottom: -4px;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
+  
+  .btn:main,
+  .btn:focus {
+    user-select: auto;
+  }
+  
+  .btn:hover:not(:disabled) {
+    filter: brightness(1.1);
+    -webkit-filter: brightness(1.1);
+  }
+  
+  .btn:disabled:after {
+    cursor: auto;
+    background: var(--cancelColor);
+  }
+  
+  .btn:active {
+    border-width: 4px 0 0;
+    background: none;
+  }
+
+  .disable-btn {
+    pointer-events: none;
+    cursor: none;
+  }
+  .clicked-btn {
+    
+  }
+  .clicked-btn:after{
+    background-color: var(--thirdColorDark);
+  }
+
+  .primary-btn {
+    background-color: orange;
+  }
+  .primary-btn:after{
+    background-color: var(--thirdColor);
+  }
+
+  .secondary-btn {
+    background-color: var(--grayColor);
+  }
+  .secondary-btn:after {
+    background-color: var(--cancelColor) !important;
+  }
+  
+  .success-btn {
+    background-color: var(--successColor);
+  }
+  .success-btn:after{
+    background-color: var(--successColorLight);
+  }
+
+  .danger-btn{
+    background-color: var(--dangerColor);
+  }
+  .danger-btn:after{
+    background-color: var(--dangerColorLight);
+  }
+  .info-btn {
+    background-color: var(--infoColor);
+  }
+  .info-btn:after{
+    background-color: var(--infoColorLight);
+  }
+
+  .cancel-btn {
+    background-color: var(--cancelColor);
+  }
+  .cancel-btn:after{
+    background-color: var(--cancelColorLight);
+  }
+
+  .icon-btn {
+    padding: 8px 12px;
+  }
+
+  /* use in case that when input is not editable yet */
+  .input-hidden {
+    border: none;
+    box-shadow: none;
+    font-size: large;
+    margin: 0;
+  }
+
+  
+button {
+  padding: 0.5rem;
+}
+
+.circle-close-btn {
+  /* background: var(--secondaryColor); */
+  background: none;
+  background-color: none;
+  color: var(--textColor);
+  border: 2px solid var(--textColor);
+  font-size: 2rem;
+  font-weight: bold;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 8px 8px 8px;
+  border-radius: 100rem;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.circle-close-btn:before {
+  content: '×';
+}
+.circle-close-btn:hover, .circle-close-btn:focus {
+  background: var(--dangerColor);
+  border-color: var(--dangerColor);
+  color: var(--textColor);
+  transform: translateY(-.2rem);
+}
+
+/* this will override the circle-close-btn above */
+.danger-close-btn {
+  color: var(--dangerColor);
+  border: 2px solid var(--dangerColor);
+}
+
+li {
+    list-style-type: none;
+}
+
+.instructions {
+    transition: 0.3s;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    background: var(--darkColor);
+    color: #fff;
+    padding: 0.5rem;
+    position: relative;
+    z-index: 5;
+    bottom: -10px;
+    opacity: 1;
+    /* transform: translateY(0); */
+}
+
+.instructions > svg {
+    margin-right: 0.25rem;
+}
+
+.offscreen {
+    position: absolute;
+    left: -9999px;
+    opacity: 0;
+    /* transform: translateY(10px); */
+}
+
+.hide {
+    display: none;
+}
+
+.display-hidden {
+  opacity: 0;
+  height: 0;
+  transition: 1s;
+  pointer-events: none;
+}
+.display-visible {
+  opacity: 1;
+  transition: 1s;
+  height: calc(100vh - var(--navbarHeight));
+  pointer-events: all;
+}
+
+.valid {
+    color: var(--successColor);
+    margin-left: 0.25rem;
+}
+
+.invalid {
+    color: var(--dangerColor);
+    margin-left: 0.25rem;
+}
+
+.errmsg {
+    background-color: lightpink;
+    color: firebrick;
+    font-weight: bold;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    width: var(--inputWidth);
+}
+
+/* FOR RESPONSIVE */
+/* Mobile Styles */
+@media only screen and (max-width: 767px) {
+  /* Your mobile styles go here */
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Your tablet styles go here */
+}
+
+/* Small Desktop Styles */
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  /* Your small desktop styles go here */
+}
+
+/* Medium Desktop Styles */
+@media only screen and (min-width: 1280px) and (max-width: 1439px) {
+  /* Your medium desktop styles go here */
+}
+
+/* Large Desktop Styles */
+@media only screen and (min-width: 1440px) {
+  /* Your large desktop styles go here */
+}
+
+/* TEST 
+ */
+
+
+ /* BLOCKLY css */
+ .blocklyTreeRow{
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 10px;
+  padding-right: 25px;
+  padding-left: 10px;
+  white-space: nowrap;
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* SWIPER CSS OVERRIDE */
+
+.swiper-grid-column > .swiper-wrapper{
+  flex-direction: unset !important;
+  }
+
+  .swiper-pagination-bullet {
+      transition: 0.3s;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  }
+
+  .swiper-pagination-bullet-active {
+      transform: scale(1.5) !important; 
+  }
+  /* .swiper-slide {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+  } */
+
+  /* 11/03/2024  SCROLL BAR CSS*/
+  /* this css is style for app's scroll bar */
+  ::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: var(--mainColorLightFaded);
+}
+
+/* css for color tags */
+.tag {
+  width: fit-content;
+  padding: 5px 8px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+/* css for appear/disappear element */
+.visibility-hidden {
+  pointer-events: none;
+  opacity: 0;
+  height: 0;
+  /* transition: 1s; */
+}
+.visibility-visible {
+  pointer-events: all;
+  opacity: 1;
+  /* transition: 1s; */
+  height: fit-content;
+}
+ 

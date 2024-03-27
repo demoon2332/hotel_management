@@ -1,0 +1,42 @@
+.sidebar-container {
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+
+.sidebar {
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    /* transform: translateY(-50%); */
+    /* height: 100%; */
+    transition: 0.5s ease-in-out;
+    background: rgba(138, 152, 233, 0.542);
+    height: 100%;
+    min-height: 100vh;
+    
+}
+
+.sidebar_logo {
+    cursor: pointer;
+}
+
+.sidebar_content {
+    
+}
+
+.ps-menu-button .ps-menu-icon {
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.ps-menu-button {
+    transition: 0.3s ease-in-out;
+}
+
+.ps-active {
+    color: var(--successColor);
+    font-weight: 900;
+    text-decoration: underline;
+}

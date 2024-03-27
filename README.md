@@ -44,3 +44,19 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+## Notice:
+- npm install react-router-dom
+- npm install axios
+- npm install --save @fortawesome/fontawesome-svg-core
+- npm install --save @fortawesome/free-solid-svg-icons
+- npm install --save @fortawesome/react-fontawesome
+- npm install react-icons;
+- npm install --save jwt-decode 
+- npm install react-pro-sidebar
+- npm install react-use-measure
+- npm install d3-time-format
+- npm install styled-components
+- npm install @tanstack/react-table
