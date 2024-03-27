@@ -8,7 +8,8 @@ import Admin from './pages/admin/Admin';
 
 function App() {
   const {isAuthenticated} = useAuth();
-
+  console.log("Check authenticated")
+  console.log(isAuthenticated());
   return (
     <div>
       <Routes>
@@ -18,7 +19,7 @@ function App() {
         />
         <Route
           path="/"
-          element={isAuthenticated() ? <Navigate to="/" /> : <Admin />}
+          element={isAuthenticated() ? <Admin /> : <Login />}
         />
       </Routes>
     </div>

@@ -4,7 +4,7 @@ import {Link, useNavigate, useLocation} from "react-router-dom";
 import { axiosPrivate } from "../../api/axiosPrivate";
 import { FaEye,FaEyeSlash } from "react-icons/fa6";
 import "../../styles/components/Login/style.css"
-
+import loadingGif from "../../assets/loading.gif";
 
 const LOGIN_URL = "/auth/login";
 
@@ -26,6 +26,7 @@ const Login= () => {
     const [pwd, setPwd] = useState("");
     const [errMsg, setErrMsg] = useState("");
     const [passwordShown, setPasswordShown] = useState(false);
+    const [loading, setLoading] = useState(false);
   
     const togglePassword = () => {
       setPasswordShown(!passwordShown);
@@ -53,8 +54,7 @@ const Login= () => {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    console.log("Handle submitt")
-
+    setLoading(true);
     try {
       console.log("thing sent");
       console.log(JSON.stringify({ username: username, password: pwd }));
@@ -62,7 +62,6 @@ const Login= () => {
         username: username,
         password: pwd,
       });
-      console.log("Chuẩn bị");
       console.log(JSON.stringify(response?.data));
 
       const accessToken = response?.data?.accessToken;
@@ -76,20 +75,20 @@ const Login= () => {
         navigate(from, { replace: true });
       }
     } catch (err: any) {
-      console.log("ERROR");
-      console.log(err);
       if (!err?.response) {
         setErrMsg("No Server Response");
       } else if (err.response?.status === 400) {
         setErrMsg("Missing Username or Password");
       } else if (err.response?.status === 401) {
-        console.log("err is: ", err.message);
         setErrMsg(err.response.data.message);
       } else {
         setErrMsg("Login Failed");
       }
       if(errRef.current)
         errRef.current.focus();
+    }
+    finally {
+      setLoading(false);
     }
   };
 
@@ -104,10 +103,10 @@ const Login= () => {
             </div>
   
             <span>
-              Bạn chưa có tài khoản sao ?{" "}
+              {/* Bạn chưa có tài khoản sao ?{" "}
               <Link to="/register" className="form-register-link">
                 Đăng ký ngay{" "}
-              </Link>{" "}
+              </Link>{" "} */}
             </span>
   
             {/* <label htmlFor="username">Username</label> */}
@@ -162,6 +161,7 @@ const Login= () => {
             >
               {errMsg}
             </p>
+            {loading && <p><img src={loadingGif} width={80} alt="loading"/> </p>}
   
             <button className="btn" onClick={handleSubmit}>Đăng nhập</button>
           </form>

@@ -24,7 +24,7 @@ interface SideBarProps {
 
 
 const SideBar:React.FC<SideBarProps> = ({className,currentPart, setCurrentPart}) =>{
-    const [sideBarOpen, setSideBarOpen] = useState(false);
+    const [sideBarOpen, setSideBarOpen] = useState(true);
     const navigate = useNavigate();
     
     const toggleSidebar = () => {
